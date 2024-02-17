@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+	<node name="yolov8_ROS" pkg="yolov8_ROS" type="ros_detect.py" output="screen">
+		<param name="source" value="/camera/color/image_raw" />
+		<param name="weights" value="$(find yolov8_ROS)/yolov8n.pt" />
+		<param name="conf" value="0.75" />
+		<param name="imgsz_h" value="640" />
+		<param name="imgsz_w" value="640" />
+		<param name="device" value="0" />
+
+		<param name="fx" value="1.8208e+03" />
+		<param name="fy" value="1.8211e+03" />
+		<param name="cx" value="990.5669" />
+		<param name="cy" value="601.1768" />
+	</node>
+</launch>
