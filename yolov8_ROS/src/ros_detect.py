@@ -116,10 +116,10 @@ class YoloV8_ROS():
                     cv2.polylines(annotated_frame, [points], isClosed=False, color=(0, 0, 255), thickness=10)
                     
                     cls = int(cls.numpy())
-                    x1 = int(x.numpy())
-                    x2 = x1 + int(w.numpy())
-                    y1 = int(y.numpy())
-                    y2 = y1 + int(h.numpy())
+                    x1 = int(x.numpy()) - int(w.numpy() / 2)
+                    x2 = int(x.numpy()) + int(w.numpy() / 2)
+                    y1 = int(y.numpy()) - int(h.numpy() / 2)
+                    y2 = int(y.numpy()) + int(h.numpy() / 2)
 
                     msg.yolo_objects.append(Objects(cls, track_id, x1, x2, y1, y2))
 
